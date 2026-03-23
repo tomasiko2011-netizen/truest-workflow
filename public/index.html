@@ -335,6 +335,49 @@
     }
     .btn-full:hover { background: var(--accent-h); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(108,92,231,.45); }
 
+    /* ── DEMOS ── */
+    .demos-bg { background: var(--surface); }
+    .demos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .demo-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+      display: flex; flex-direction: column;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+      position: relative; overflow: hidden;
+    }
+    .demo-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), #a29bfe);
+      opacity: 0; transition: opacity .25s;
+    }
+    .demo-card:hover { border-color: rgba(108,92,231,.45); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+    .demo-card:hover::before { opacity: 1; }
+    .demo-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin-bottom: 20px;
+    }
+    .demo-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .demo-card p  { font-size: 14px; color: var(--muted); line-height: 1.6; flex: 1; margin-bottom: 24px; }
+    .btn-demo {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--accent); color: #fff;
+      padding: 12px 22px; border-radius: 9px;
+      font-size: 14px; font-weight: 700; text-decoration: none;
+      border: none; cursor: pointer;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 16px rgba(108,92,231,.3);
+      align-self: flex-start;
+    }
+    .btn-demo:hover { background: var(--accent-h); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(108,92,231,.42); }
+
     /* ── CONTACT FORM ── */
     .contact-bg { background: var(--surface); }
     .contact-wrap {
@@ -493,6 +536,7 @@
       <ul class="nav-links">
         <li><a href="#features">Возможности</a></li>
         <li><a href="#how">Как работает</a></li>
+        <li><a href="#demos">Демо</a></li>
         <li><a href="#pricing">Цены</a></li>
         <li><a href="#contact">Контакты</a></li>
       </ul>
@@ -508,6 +552,7 @@
 <div class="mobile-menu" id="mobile-menu">
   <a href="#features" class="mobile-link">Возможности</a>
   <a href="#how" class="mobile-link">Как работает</a>
+  <a href="#demos" class="mobile-link">Демо</a>
   <a href="#pricing" class="mobile-link">Цены</a>
   <a href="#contact" class="mobile-link">Контакты</a>
   <a href="#contact" class="mobile-cta">Начать бесплатно</a>
@@ -691,6 +736,37 @@
   </div>
 </section>
 
+<!-- ── DEMOS ── -->
+<section id="demos" class="demos-bg">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge badge-green">Демо</span>
+      <h2>Попробуйте прямо сейчас</h2>
+      <p>Рабочий продукт — откройте и оцените</p>
+    </div>
+    <div class="demos-grid">
+      <div class="demo-card fade-in">
+        <div class="demo-icon" style="background:rgba(108,92,231,.15)">⚡</div>
+        <h3>SmartWorkflow App</h3>
+        <p>Откройте и посмотрите интерфейс — рабочая система документооборота с маршрутами, согласованием и электронной подписью.</p>
+        <a href="https://smartworkflow-nu.vercel.app" target="_blank" rel="noopener" class="btn-demo">Открыть SmartWorkflow →</a>
+      </div>
+      <div class="demo-card fade-in fade-in-delay-1">
+        <div class="demo-icon" style="background:rgba(34,158,217,.15)">✈️</div>
+        <h3>Telegram Bot</h3>
+        <p>@SmartWorkflowBot — получайте уведомления о документах прямо в Telegram. Мгновенные оповещения о новых задачах и статусах.</p>
+        <a href="https://t.me/SmartWorkflowBot" target="_blank" rel="noopener" class="btn-demo">Открыть бота →</a>
+      </div>
+      <div class="demo-card fade-in fade-in-delay-2">
+        <div class="demo-icon" style="background:rgba(0,184,148,.15)">💬</div>
+        <h3>Chatwoot CRM</h3>
+        <p>Единое окно для всех каналов связи — WhatsApp, Telegram, email и web-chat в одном интерфейсе.</p>
+        <a href="https://crm.truest.kz" target="_blank" rel="noopener" class="btn-demo">Открыть CRM →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── PRICING ── -->
 <section id="pricing">
   <div class="container">
@@ -802,6 +878,7 @@
       <nav class="footer-links">
         <a href="#features">Возможности</a>
         <a href="#how">Как работает</a>
+        <a href="#demos">Демо</a>
         <a href="#pricing">Цены</a>
         <a href="#contact">Контакты</a>
         <a href="https://t.me/BotJasau" target="_blank">Telegram</a>
